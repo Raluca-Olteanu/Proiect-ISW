@@ -5,3 +5,4 @@ Membrii: Olteanu Raluca - Team lead / backend
 
 Tehnologiile alese: Angular - backend, visual studio code 2022 - frontend, mysql - pt baza de date
          
+Tema: Platforma de vânzări/promovare produse handmade 
