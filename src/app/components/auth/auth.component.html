@@ -1,27 +1,50 @@
 <div class="auth-wrapper">
     <div class="login-header">
-        <h1>Welcome</h1>
-        <div class="login-icon">A</div> <!-- You can replace this with an SVG or image -->
+        <h1>{{ isLoginMode ? 'Welcome' : 'Create Account' }}</h1>
+        <div class="login-icon">{{ isLoginMode ? 'A' : 'S' }}</div> <!-- Adjust the icon/text according to the mode -->
     </div>
     
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" class="form-wrapper">
+        <!-- Sign-Up Fields -->
+        <mat-form-field appearance="fill" class="example-full-width" *ngIf="!isLoginMode">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Enter your first name" type="text" name="firstName" ngModel required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="example-full-width" *ngIf="!isLoginMode">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Enter your last name" type="text" name="lastName" ngModel required>
+        </mat-form-field>
+        
+        <!-- Common Fields -->
         <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Email</mat-label>
             <input matInput placeholder="Enter your email" type="email" name="email" ngModel required>
         </mat-form-field>
-        
         <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Password</mat-label>
             <input matInput placeholder="Enter your password" type="password" name="password" ngModel required>
         </mat-form-field>
         
+        <!-- Additional Sign-Up Fields -->
+        <mat-form-field appearance="fill" class="example-full-width" *ngIf="!isLoginMode">
+            <mat-label>Role</mat-label>
+            <mat-select placeholder="Select your role" name="role" ngModel required>
+                <mat-option value="User">User</mat-option>
+                <mat-option value="Admin">Admin</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <!-- Submit Button -->
         <button mat-raised-button class="submit-button" type="submit" [disabled]="!authForm.valid">
-            Login
+            {{ isLoginMode ? 'Login' : 'Sign Up' }}
         </button>
         
+        <!-- Toggle Mode Link -->
         <div class="switch-mode">
-            Don't have an account? 
-            <span (click)="onSwitchMode()">Sign Up</span>
+            {{
+                isLoginMode ? 'Don\'t have an account?' : 'Already have an account?'
+            }}
+            <span (click)="onSwitchMode()">{{ isLoginMode ? 'Sign Up' : 'Login' }}</span>
         </div>
     </form>
 </div>
