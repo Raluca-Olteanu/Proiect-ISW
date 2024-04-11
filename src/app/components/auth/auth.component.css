@@ -68,3 +68,15 @@
     cursor: pointer;
   }
   
+  body {
+    background: linear-gradient(to right, #46e1c2, #34c99f); /* Turquoise to green gradient */
+    height: 100%;
+    width: 100%;
+  }
+
+  :host {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, #46e1c2, #34c99f); /* Turquoise to green gradient */
+  }
