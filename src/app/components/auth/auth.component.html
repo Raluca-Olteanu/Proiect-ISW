@@ -1,7 +1,8 @@
 <div class="auth-wrapper">
     <div class="login-header">
         <h1>{{ isLoginMode ? 'Welcome' : 'Create Account' }}</h1>
-        <div class="login-icon">{{ isLoginMode ? 'A' : 'S' }}</div> <!-- Adjust the icon/text according to the mode -->
+        <!-- Angular icon used for both login and sign up forms -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Angular_icon.svg" class="login-icon" alt="Angular Logo" />
     </div>
     
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" class="form-wrapper">
