@@ -1,40 +1,52 @@
 .auth-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(90deg,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(127, 168, 181, 1) 80%);
-    height: 100vh;
-}
-
-.form-wrapper {
-    width: 30%;
-    padding: 25px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.example-full-width {
+    background: linear-gradient(to right, #0062E6, #33AEFF); /* Example gradient background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 100%;
-    height: 70px;
-}
-
-.login {
-    width: 30%;
-    height: 30%;
+    max-width: 400px;
     margin: 0 auto;
-    padding-top: 0px;
-    padding-bottom: 10px;
-    display: block;
-}
-
-
-  ::ng-deep .mat-select-panel.role-select {
-    margin-top: 40px; /* Adjust this value as needed */
   }
-    
+  
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-form-field {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Additional styles for icons inside input fields if you decide to add them */
+  .input-icon {
+    position: absolute;
+    margin: 12px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Improve the visibility of input text */
+  input::placeholder {
+    color: white;
+  }
+  input {
+    color: white;
+  }
+  
+  /* Toggle between login and sign-up mode */
+  .onSwitchMode {
+    cursor: pointer;
+    color: #0D47A1;
+    text-decoration: underline;
+  }
