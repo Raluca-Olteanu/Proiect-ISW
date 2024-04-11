@@ -7,29 +7,36 @@
     
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" class="form-wrapper">
         <!-- Sign-Up Fields -->
+
+        <!-- Username Field -->
+        <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Enter your username" type="userName" name="userName" ngModel [required]="true" userName>
+        </mat-form-field>
+
         <mat-form-field appearance="fill" class="example-full-width" *ngIf="!isLoginMode">
             <mat-label>First Name</mat-label>
-            <input matInput placeholder="Enter your first name" type="text" name="firstName" ngModel required>
+            <input matInput placeholder="Enter your first name" type="name" name="firstName" ngModel [required]="true">
         </mat-form-field>
         <mat-form-field appearance="fill" class="example-full-width" *ngIf="!isLoginMode">
             <mat-label>Last Name</mat-label>
-            <input matInput placeholder="Enter your last name" type="text" name="lastName" ngModel required>
+            <input matInput placeholder="Enter your last name" type="name" name="lastName" ngModel [required]="true">
         </mat-form-field>
         
         <!-- Common Fields -->
         <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Enter your email" type="email" name="email" ngModel required>
+            <input matInput placeholder="Enter your email" type="email" name="email" ngModel [required]="true">
         </mat-form-field>
         <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Password</mat-label>
-            <input matInput placeholder="Enter your password" type="password" name="password" ngModel required>
+            <input matInput placeholder="Enter your password" type="password" name="password" ngModel [required]="true">
         </mat-form-field>
         
         <!-- Additional Sign-Up Fields -->
         <mat-form-field appearance="fill" class="example-full-width" *ngIf="!isLoginMode">
             <mat-label>Role</mat-label>
-            <mat-select placeholder="Select your role" name="role" ngModel required>
+            <mat-select placeholder="Select your role" name="role" ngModel [required]="true">
                 <mat-option value="User">User</mat-option>
                 <mat-option value="Admin">Admin</mat-option>
             </mat-select>

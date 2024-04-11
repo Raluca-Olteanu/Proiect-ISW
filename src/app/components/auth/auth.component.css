@@ -1,85 +1,85 @@
 .auth-wrapper {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 50px;
-    width: 350px;
-    margin: 5% auto;
-    text-align: center;
-  }
-  
-  .login-header {
-    margin-bottom: 30px;
-  }
-  
-  .login-header h1 {
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .login-icon {
-    background: #eee;
-    font-size: 40px;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    border-radius: 50%;
-    margin: 10px auto;
-  }
-  
-  .example-full-width {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-  }
-  
-  .submit-button {
-    width: 100%;
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-    color: white;
-    padding: 15px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 25px;
-    box-shadow: none;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-  
-  .submit-button:disabled {
-    background: #ccc;
-  }
-  
-  .submit-button:hover {
-    opacity: 0.9;
-  }
-  
-  .switch-mode {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .switch-mode span {
-    color: #007bff;
-    cursor: pointer;
-  }
-  
-  body {
-    background: linear-gradient(to right, #46e1c2, #34c99f); /* Turquoise to green gradient */
-    height: 100%;
-    width: 100%;
-  }
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  width: 350px;
+  margin: 5% auto;
+  text-align: center;
+}
 
-  :host {
-    display: block;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(to right, #46e1c2, #34c99f); /* Turquoise to green gradient */
-  }
+.login-header {
+  margin-bottom: 30px;
+}
+
+.login-header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.login-icon {
+  background: #eee;
+  font-size: 40px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+.example-full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+}
+
+.submit-button {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  color: white;
+  padding: 15px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: none;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.submit-button:disabled {
+  background: #ccc;
+}
+
+.submit-button:hover {
+  opacity: 0.9;
+}
+
+.switch-mode {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.switch-mode span {
+  color: #007bff;
+  cursor: pointer;
+}
+
+body {
+  background: linear-gradient(to right, #46e1c2, #34c99f); /* Turquoise to green gradient */
+  height: 100%;
+  width: 100%;
+}
+
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, #46e1c2, #34c99f); /* Turquoise to green gradient */
+}
 
 .auth-wrapper,
 .login-header,
@@ -87,5 +87,5 @@
 button,
 input,
 mat-form-field {
-  font-family: 'Quicksand', sans-serif;
+font-family: 'Quicksand', sans-serif;
 }
