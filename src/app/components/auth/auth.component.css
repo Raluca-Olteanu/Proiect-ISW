@@ -80,3 +80,12 @@
     width: 100vw;
     background: linear-gradient(to right, #46e1c2, #34c99f); /* Turquoise to green gradient */
   }
+
+.auth-wrapper,
+.login-header,
+.form-wrapper,
+button,
+input,
+mat-form-field {
+  font-family: 'Quicksand', sans-serif;
+}
