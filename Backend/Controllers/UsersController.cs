@@ -38,78 +38,17 @@ namespace Backend.Controllers
             return await _context.Users.SingleOrDefaultAsync(x => x.Username == username);
         }
 
-        [HttpGet("products")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
+        [HttpDelete("delete/{id}")]
+        public async Task<ActionResult> DeleteUser(int id)
         {
-            return await _context.Products.ToListAsync();
-        }
-
-        [HttpGet("purchases")]
-        public async Task<ActionResult<IEnumerable<Purchase>>> GetAllPurchases()
-        {
-            var purchases = await _context.Purchases.Include(p => p.Products).ToListAsync();
-            return purchases;
-        }
-
-        [HttpPost("products")]
-        [Authorize(Roles = "Admin")]
-        public async Task<Product> CreateProduct(Product product)
-        {
-            _context.Products.Add(product);
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            _context.Users.Remove(user);
             await _context.SaveChangesAsync();
-            return product;
-        }
-
-        [HttpPost("purchases")]
-        public async Task<ActionResult<Purchase>> CreatePurchase(PurchaseDto purchaseDto)
-        {
-            try
-            {
-                // Create a new Purchase entity
-                var purchase = new Purchase
-                {
-                    UserId = purchaseDto.UserId,
-                    PurchaseDate = DateTime.Now,
-                    Products = new List<Product>() // Initialize the Products collection
-                };
-
-                // Retrieve products from the database based on the received product IDs
-                foreach (var productId in purchaseDto.ProductIds)
-                {
-                    var product = await _context.Products.FindAsync(productId);
-                    if (product != null)
-                    {
-                        // Associate the product with the purchase
-                        purchase.Products.Add(product);
-                    }
-                    else
-                    {
-                        // Product with the given ID not found
-                        return BadRequest($"Product with ID {productId} not found.");
-                    }
-                }
-
-                // Add the purchase to the database
-                _context.Purchases.Add(purchase);
-                await _context.SaveChangesAsync();
-
-                // Return the created purchase
-                return CreatedAtAction(nameof(GetPurchase), new { id = purchase.Id }, purchase);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"An error occurred while creating the purchase: {ex.Message}");
-            }
-        }
-
-        [HttpGet("purchases/id/{id}")]
-        public async Task<Purchase> GetPurchase(int id)
-        {
-            var purchase = await _context.Purchases
-                .Include(p => p.Products) // Eager loading the Products navigation property
-                .FirstOrDefaultAsync(p => p.Id == id);
-
-            return purchase;
+            return Ok();
         }
     }
 }
