@@ -1,0 +1,33 @@
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .product {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 30%;
+    overflow: hidden; /* Ensures images do not overflow the boundaries of the product cards */
+  }
+  
+  .product img {
+    width: 100%; /* Sets the image width to fill the card */
+    height: 300px; /* Sets a fixed height for all images */
+    object-fit: cover; /* Ensures the image covers the set area, cropping the rest */
+    object-position: center; /* Centers the image within the frame */
+  }
+  
+  .product-info {
+    text-align: center;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
