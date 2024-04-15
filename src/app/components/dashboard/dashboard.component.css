@@ -5,6 +5,7 @@
   }
   
   .product {
+    font-family: 'Quicksand', sans-serif;
     border: 1px solid #ccc;
     margin: 10px;
     padding: 10px;
@@ -12,12 +13,12 @@
     overflow: hidden; /* Ensures images do not overflow the boundaries of the product cards */
   }
   
-  .product img {
-    width: 100%; /* Sets the image width to fill the card */
-    height: 300px; /* Sets a fixed height for all images */
-    object-fit: cover; /* Ensures the image covers the set area, cropping the rest */
-    object-position: center; /* Centers the image within the frame */
-  }
+   .product img {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    object-position: center; 
+  } 
   
   .product-info {
     text-align: center;
